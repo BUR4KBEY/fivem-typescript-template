@@ -1,0 +1,40 @@
+{
+    "name": "fivem-typescript-template",
+    "version": "1.0.0",
+    "description": "A template for FiveM using TypeScript",
+    "main": "index.js",
+    "scripts": {
+        "prepare": "husky install",
+        "clean": "rimraf ./dist",
+        "prebuild": "yarn clean",
+        "build": "yarn type_check && yarn build:bundle",
+        "build:bundle": "node scripts/buildBundle.js",
+        "lint": "yarn eslint . --ext .ts",
+        "type_check": "tsc --noEmit -p client/tsconfig.json && tsc --noEmit -p server/tsconfig.json",
+        "watch": "yarn clean && cross-env IS_WATCH_MODE=1 yarn build:bundle",
+        "pre-commit": "yarn lint && pretty-quick --staged"
+    },
+    "author": "BUR4KBEY",
+    "license": "MIT",
+    "devDependencies": {
+        "@citizenfx/client": "^2.0.6063-1",
+        "@citizenfx/server": "^2.0.6063-1",
+        "@commitlint/cli": "^17.4.2",
+        "@commitlint/config-conventional": "^17.4.2",
+        "@types/node": "^16.18.3",
+        "@typescript-eslint/eslint-plugin": "^5.51.0",
+        "@typescript-eslint/parser": "^5.51.0",
+        "cross-env": "^7.0.3",
+        "esbuild": "^0.15.15",
+        "eslint": "^8.33.0",
+        "eslint-config-airbnb-base": "^15.0.0",
+        "eslint-config-prettier": "^8.6.0",
+        "eslint-plugin-import": "^2.27.5",
+        "eslint-plugin-prettier": "^4.2.1",
+        "husky": "^8.0.3",
+        "prettier": "^2.8.3",
+        "pretty-quick": "^3.1.3",
+        "rimraf": "^3.0.2",
+        "typescript": "^4.9.3"
+    }
+}
