@@ -31,6 +31,7 @@ module.exports = {
         'import/export': 0,
         'no-shadow': 'off',
         '@typescript-eslint/no-shadow': ['error'],
-        'import/no-useless-path-segments': 0
+        'import/no-useless-path-segments': 0,
+        '@typescript-eslint/no-non-null-assertion': 0
     }
 };

@@ -17,7 +17,7 @@ const isEnvBrowser = (): boolean => !anyWindow.invokeNative;
 
 export default async function fetchNui<T = unknown>(
     eventName: string,
-    data?: T,
+    data?: unknown,
     mockData?: T
 ): Promise<T> {
     const options = {

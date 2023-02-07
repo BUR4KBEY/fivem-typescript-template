@@ -6,8 +6,8 @@ import {
     useState
 } from 'react';
 
-import { useNuiEvent } from '../hooks/useNuiEvent';
-import { fetchNui } from '../utils/fetchNui';
+import useNuiEvent from '../hooks/useNuiEvent';
+import fetchNui from '../utils/fetchNui';
 import { Dispatch, isProduction } from '../utils/Helpers';
 
 interface NuiData {

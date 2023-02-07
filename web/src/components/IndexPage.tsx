@@ -1,12 +1,12 @@
 import { useState } from 'react';
 
 import { useMain } from '../context/MainContext';
-import { useNuiEvent } from '../hooks/useNuiEvent';
-import { fetchNui } from '../utils/fetchNui';
+import useNuiEvent from '../hooks/useNuiEvent';
+import fetchNui from '../utils/fetchNui';
 import { isProduction } from '../utils/Helpers';
 
 interface ResponseType {
-    notification: string;
+    notification: 'string';
 }
 
 export default function IndexPage() {
@@ -19,30 +19,26 @@ export default function IndexPage() {
 
     const sendMessageToClient = async () => {
         if (isProduction) {
-            const { notification } = await fetchNui<ResponseType>(
-                'send-message',
-                {
-                    to: 'client',
-                    message: message || 'Empty message'
-                }
-            );
-            setNotification(notification);
+            const response = await fetchNui<ResponseType>('send-message', {
+                to: 'client',
+                message: message || 'Empty message'
+            });
+            setNotification(response.notification);
         } else {
+            // eslint-disable-next-line no-console
             console.log(`send message to client: ${message}`);
         }
     };
 
     const sendMessageToServer = async () => {
         if (isProduction) {
-            const { notification } = await fetchNui<ResponseType>(
-                'send-message',
-                {
-                    to: 'server',
-                    message: message || 'Empty message'
-                }
-            );
-            setNotification(notification);
+            const response = await fetchNui<ResponseType>('send-message', {
+                to: 'server',
+                message: message || 'Empty message'
+            });
+            setNotification(response.notification);
         } else {
+            // eslint-disable-next-line no-console
             console.log(`send message to server: ${message}`);
         }
     };
