@@ -40,3 +40,9 @@ If the installation succeeds, you can use `template` command in the game. (F8 > 
 -   You can develop the UI using `dev` command (in `web` folder) on browser. After you finish the development process, you can run `build` command to build.
 
 -   You can use `watch` command to build your `server` and `client` folders automatically.
+
+## ☕ Support
+
+If you find this project useful and would like to support [me](https://github.com/BUR4KBEY), you can do so by visiting [my website](https://burakbey.dev).
+
+<a href="https://burakbey.dev" target="_blank"><img src="https://burakbey.dev/github_support_snippet.png" style="height: 56px !important;width: 200px !important;" alt="Buy me a coffee"></img></a>
